@@ -1,2 +1,2 @@
-# DataKick_SDK
+# DataKick SDK
 SDK to interface with datakick.com

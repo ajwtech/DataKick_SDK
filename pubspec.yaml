@@ -1,8 +1,8 @@
 name: datakick_sdk
 description: An SDK to interact with the datakick product database
 version: 0.0.1
-author:
-homepage:
+author: Adam Wheeler <ajwtech@gmail.com>
+homepage: https://github.com/ajwtech/DataKick_SDK
 
 environment:
   sdk: ">=2.0.0-dev.68.0 <3.0.0"
