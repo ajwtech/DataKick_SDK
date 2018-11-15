@@ -53,23 +53,35 @@ class _CameraAppState extends State<CameraApp> {
         child: new cam.CameraPreview(controller));
   }
 }
-
+// ignore: non_constant_identifier_names
 @JsonSerializable()
 class Product {
+  // watch this with flutter packages pub run build_runner watch
+// ignore: non_constant_identifier_names
   String brand_name,
       name,
       size,
       ingredients,
+  // ignore: non_constant_identifier_names
       serving_size,
+  // ignore: non_constant_identifier_names
       servings_per_container;
   double calories,
+  // ignore: non_constant_identifier_names
       fat_calories,
       fat,
+  // ignore: non_constant_identifier_names
       saturated_fat,
+  // ignore: non_constant_identifier_names
       trans_fat,
+  // ignore: non_constant_identifier_names
       polyunsaturated_fat;
+
+  // ignore: non_constant_identifier_names
   double monounsaturated_fat, cholesterol, sodium, potassium, carbohydrate;
-  double fiber, sugars, protein, alcohol_by_volume;
+  double fiber, sugars, protein,
+  // ignore: non_constant_identifier_names
+      alcohol_by_volume;
   String author, format, publisher;
   int pages;
   var images;
@@ -102,7 +114,7 @@ class Product {
       this.pages,
       this.alcohol_by_volume);
 
-  Product.Food(
+  Product.food(
       this.brand_name,
       this.name,
       this.size,

@@ -1,6 +1,6 @@
 name: datakick_sdk
-description: An SDK to interact with the datakick product database
-version: 0.0.1
+description: A software development kit to interact with the datakick.com product database.
+version: 0.1.0
 author: Adam Wheeler <ajwtech@gmail.com>
 homepage: https://github.com/ajwtech/DataKick_SDK
 
@@ -12,9 +12,9 @@ dependencies:
     sdk: flutter
   firebase_ml_vision: ^0.2.0+1
   camera: ^0.2.4
-  http: 0.11.3+17
+  http: ^0.11.3+17
   convert: ^2.0.2
-  html:
+  html: ^0.13.3+3
   json_annotation: ^2.0.0
 
 dev_dependencies:
@@ -22,6 +22,7 @@ dev_dependencies:
     sdk: flutter
   build_runner: ^1.0.0
   json_serializable: ^2.0.0
+  test:
 
 # For information on the generic Dart part of this file, see the
 # following page: https://www.dartlang.org/tools/pub/pubspec
