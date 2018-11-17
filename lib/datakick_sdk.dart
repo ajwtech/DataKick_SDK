@@ -57,6 +57,7 @@ class _CameraAppState extends State<CameraApp> {
 @JsonSerializable()
 class Product {
   // watch this with flutter packages pub run build_runner watch
+  // publish with flutter packages pub publish
 // ignore: non_constant_identifier_names
   String brand_name,
       name,

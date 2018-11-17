@@ -1,6 +1,6 @@
 name: datakick_sdk
 description: A software development kit to interact with the datakick.com product database.
-version: 0.1.0
+version: 0.1.1
 author: Adam Wheeler <ajwtech@gmail.com>
 homepage: https://github.com/ajwtech/DataKick_SDK
 
@@ -23,6 +23,7 @@ dev_dependencies:
   build_runner: ^1.0.0
   json_serializable: ^2.0.0
   test:
+  barcode_scan: ^0.0.3
 
 # For information on the generic Dart part of this file, see the
 # following page: https://www.dartlang.org/tools/pub/pubspec

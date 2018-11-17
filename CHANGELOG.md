@@ -1,3 +1,9 @@
+## [0.1.1] - 11/15/2018
+
+Data kick SDK to interface with [DataKick Product database](https://www.datakick.org "cause it's fricken awesome")
+
+Added Example Directory
+
 ## [0.1.0] - 11/15/2018
 
 Data kick SDK to interface with [DataKick Product database](https://www.datakick.org "cause it's fricken awesome")
