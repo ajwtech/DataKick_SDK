@@ -4,9 +4,9 @@ import 'package:barcode_scan/barcode_scan.dart';
 import 'package:datakick_sdk/datakick_sdk.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-
 //Added for barcode scanning
-//Web import
+//Package to be added
+
 
 void main() => runApp(MyApp());
 

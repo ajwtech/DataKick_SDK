@@ -16,11 +16,11 @@ void main() {
       expect(pro.brand_name, "Riviana");
       expect(pro.name, "Orzo 100% Whole Wheat Pasta");
       pro.name = "Orzo 100 Percent Whole Wheat Pasta";
-      pro.update("074401704416").then(expectAsync1((Product pro1) {
+      pro.update().then(expectAsync1((Product pro1) {
         expect(pro1.brand_name, "Riviana");
         expect(pro1.name, "Orzo 100 Percent Whole Wheat Pasta");
         pro1.name = "Orzo 100% Whole Wheat Pasta";
-        pro1.update("074401704416").then(expectAsync1((Product pro2) {
+        pro1.update().then(expectAsync1((Product pro2) {
           expect(pro2.brand_name, "Riviana");
           expect(pro2.name, "Orzo 100% Whole Wheat Pasta");
         }));

@@ -8,6 +8,7 @@ part of datakick_sdk;
 
 Product _$ProductFromJson(Map<String, dynamic> json) {
   return Product(
+      json['gtin14'] as String,
       json['brand_name'] as String,
       json['name'] as String,
       json['size'] as String,
@@ -37,6 +38,7 @@ Product _$ProductFromJson(Map<String, dynamic> json) {
 }
 
 Map<String, dynamic> _$ProductToJson(Product instance) => <String, dynamic>{
+      'gtin14': instance.gtin14,
       'brand_name': instance.brand_name,
       'name': instance.name,
       'size': instance.size,

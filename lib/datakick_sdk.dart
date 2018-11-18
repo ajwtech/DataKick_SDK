@@ -59,7 +59,7 @@ class Product {
   // watch this with flutter packages pub run build_runner watch
   // publish with flutter packages pub publish
 // ignore: non_constant_identifier_names
-  String brand_name,
+  String gtin14, brand_name,
       name,
       size,
       ingredients,
@@ -87,7 +87,7 @@ class Product {
   int pages;
   var images;
 
-  Product(
+  Product(this.gtin14,
       this.brand_name,
       this.name,
       this.size,
@@ -115,7 +115,7 @@ class Product {
       this.pages,
       this.alcohol_by_volume);
 
-  Product.food(
+  Product.food(this.gtin14,
       this.brand_name,
       this.name,
       this.size,
@@ -174,8 +174,8 @@ class Product {
     return resp;
   }
 
-  Future<Product> update(String barcode) async {
-    var resp = await this._sendBarcodeData(barcode);
+  Future<Product> update() async {
+    var resp = await this._sendBarcodeData(this.gtin14);
 
     Map productMap = json.decode(resp.body);
     var product = new Product.fromJson(productMap);
