@@ -1,3 +1,17 @@
+## [0.2.0] - 11/18/2018
+updated roadmap on readme
+
+
+## [0.2.0] - 11/18/2018
+
+Breaking change on pre-release
+update no longer needs a parameter. gtin14 is now returned with the object.
+minor changes
+Correctly commented Example
+Lots of updates in the readme so that it is actually useful.
+#### Data kick SDK to interface with
+[DataKick Product database](https://www.datakick.org "cause it's fricken awesome")
+
 ## [0.1.1] - 11/15/2018
 
 Data kick SDK to interface with [DataKick Product database](https://www.datakick.org "cause it's fricken awesome")
