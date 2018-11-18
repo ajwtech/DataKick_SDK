@@ -1,6 +1,6 @@
 name: datakick_sdk
 description: A software development kit to interact with the datakick.com product database.
-version: 0.1.1
+version: 0.2.0
 author: Adam Wheeler <ajwtech@gmail.com>
 homepage: https://github.com/ajwtech/DataKick_SDK
 
