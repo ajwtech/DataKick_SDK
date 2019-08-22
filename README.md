@@ -49,7 +49,7 @@ package Road map:
 
 *TODO*:
 * Add functionality for camera plugin to create a widget (v0.3.0)
-* Add functionality for adding (v1.0.0)
+* Add functionality for adding images (v1.0.0)
 * Add functionality for updating or modifying images (version undetermined)
 * Add functionality for image removal (version undetermined)
 * Add functionality for image data parsing through ML/AI (v2.0.0)

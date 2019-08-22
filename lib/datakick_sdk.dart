@@ -10,11 +10,13 @@ import 'package:json_annotation/json_annotation.dart';
 
 part 'datakick_sdk.g.dart';
 
+/// Implements and extends camera package for a stateful widget.
 class CameraApp extends StatefulWidget {
   @override
   _CameraAppState createState() => new _CameraAppState();
 }
 
+/// Implements and extends camera package for a stateful widget. Internal use
 class _CameraAppState extends State<CameraApp> {
   cam.CameraController controller;
 
@@ -32,6 +34,7 @@ class _CameraAppState extends State<CameraApp> {
     });
   }
 
+  ///Implements camera package to return available cameras.
   getCameras() async {
     var cameras = await cam.availableCameras();
     return cameras;
@@ -43,6 +46,7 @@ class _CameraAppState extends State<CameraApp> {
     super.dispose();
   }
 
+  ///Not sure the right way to use this. This is still experimental.
   @override
   Widget build(BuildContext context) {
     if (!controller.value.isInitialized) {
@@ -55,8 +59,14 @@ class _CameraAppState extends State<CameraApp> {
 }
 // ignore: non_constant_identifier_names
 @JsonSerializable()
+
+/// Class for implementing a new product.
+///
+/// This includes all of the columns available in data kick. The names
+/// do not match standard non constant identifier convention because the
+/// JSON Searializer is matching the name to JSON for auto code generation.
 class Product {
-  // watch this with flutter packages pub run build_runner watch
+  /// watch this with flutter packages pub run build_runner watch
   // publish with flutter packages pub publish
 // ignore: non_constant_identifier_names
   String gtin14, brand_name,
@@ -87,6 +97,7 @@ class Product {
   int pages;
   var images;
 
+  /// Default constructor
   Product(this.gtin14,
       this.brand_name,
       this.name,
@@ -115,6 +126,7 @@ class Product {
       this.pages,
       this.alcohol_by_volume);
 
+  ///This constructor handles only the fields needed for food and alcohol.
   Product.food(this.gtin14,
       this.brand_name,
       this.name,
@@ -138,19 +150,29 @@ class Product {
       this.protein,
       this.alcohol_by_volume);
 
+  ///Probably the most commonly used constructor.
+  ///
+  /// Allows for the user to create an empty product for population
   Product.empty();
 
+  //TODO: Create a constructor for non food items.
+
   /// A necessary factory constructor for creating a new instance
-  /// from a map. Pass the map to the generated `_$ProductFromJson` constructor.
+  /// from a map.
+  ///
+  /// Pass the map to the generated `_$ProductFromJson` constructor.
   /// The constructor is named after the source class, in this case Product.
   factory Product.fromJson(Map<String, dynamic> json) =>
       _$ProductFromJson(json);
 
   /// `toJson` is the convention for a class to declare support for serialization
-  /// to JSON. The implementation simply calls the private, generated
+  /// to JSON.
+  ///
+  /// The implementation simply calls the private, generated
   /// helper method `_$FoodToJson`.
   Map<String, dynamic> toJson() => _$ProductToJson(this);
 
+  ///Internal call
   _getBarcodeData(String barcode) async {
     //lookup barcode
     String uri = "https://www.datakick.org/api/items/" + barcode;
@@ -158,6 +180,9 @@ class Product {
     return _resp;
   }
 
+  ///Function to make a call to data kick to get a product based on a barcode.
+  ///
+  /// Accepts barcodes without leading zeros just as the API does.
   Future<Product> getBarcode(String barcode) async {
     var resp = await _getBarcodeData(barcode);
     Map productMap = json.decode(resp.body);
@@ -165,6 +190,7 @@ class Product {
     return product;
   }
 
+  ///Internal call
   _sendBarcodeData(String barcode) async {
     //lookup barcode
     String uri = "https://www.datakick.org/api/items/" + barcode;
@@ -174,6 +200,8 @@ class Product {
     return resp;
   }
 
+  ///After a product has been modified locally. this call will PUT updates to
+  ///the data kick database
   Future<Product> update() async {
     var resp = await this._sendBarcodeData(this.gtin14);
 
@@ -183,6 +211,7 @@ class Product {
   }
 }
 
+///internal call
 _dataKicklist({String uri = "https://www.datakick.org/api/items/"}) async {
   //lookup barcode
 
@@ -190,6 +219,10 @@ _dataKicklist({String uri = "https://www.datakick.org/api/items/"}) async {
   return _resp;
 }
 
+/// Returns a list of [product]s.
+///
+/// Currently does not have a lot of functionality except to recursively
+/// extend the list of [product]s it returns.
 Future<ProductMap> dataKickList(ProductMap productMap) async {
   http.Response resp;
   if (productMap.resp != null) {
@@ -208,6 +241,7 @@ Future<ProductMap> dataKickList(ProductMap productMap) async {
   return productMap;
 }
 
+///Map to use for storing a [dataKickList]
 class ProductMap {
   http.Response resp;
   List<dynamic> products = [];

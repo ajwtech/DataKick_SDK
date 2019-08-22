@@ -1,6 +1,28 @@
-## [0.2.0] - 11/18/2018
-updated roadmap on readme
+## [0.2.6] - 8/22/2019
+Updated Flutter which was holding  back some dependencies.
 
+## [0.2.5] - 8/22/2019
+removed shorthand from dependencies
+
+## [0.2.4] - 8/22/2019
+Updated dependencies
+
+## [0.2.3] - 11/18/2018
+Added Dart documentation because my score dropped 9.75 points :(
+
+
+## [0.2.2] - 11/18/2018
+
+It is clearly too early for me to be making commits...
+
+corrected readme,
+removed extra readme,
+corrected versioning,
+and got a cup of coffee...
+
+## [0.2.1] - 11/18/2018
+updated road map on readme
+General housekeeping.
 
 ## [0.2.0] - 11/18/2018
 
