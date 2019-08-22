@@ -1,3 +1,6 @@
+## [0.2.7] - 8/22/2019
+Updated json deps
+
 ## [0.2.6] - 8/22/2019
 Updated Flutter which was holding  back some dependencies.
 
